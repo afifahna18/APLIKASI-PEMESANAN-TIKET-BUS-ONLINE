@@ -377,19 +377,19 @@ public class Halmenu extends javax.swing.JFrame {
 
     private void btnjadwalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjadwalActionPerformed
         // TODO add your handling code here:
-        new Haljadwal().setVisible(true);
+        new Haldatabus().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnjadwalActionPerformed
 
     private void btnbookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbookingActionPerformed
         // TODO add your handling code here:
-        new Haljadwal().setVisible(true);
+        new Haldatabus().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnbookingActionPerformed
 
     private void btntransactionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntransactionActionPerformed
         // TODO add your handling code here:
-        new Haljadwal().setVisible(true);
+        new Haldatabus().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btntransactionActionPerformed
 

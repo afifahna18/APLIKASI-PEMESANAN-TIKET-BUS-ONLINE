@@ -38,8 +38,8 @@ public class Haldatabus extends javax.swing.JFrame {
         txtid.setText(null);
         txtnama.setText(null);
         cmbkelas.setSelectedItem(null);
-        txtnopolisi.setText(null);
-        txtharga.setText(null); 
+        txtnopol.setText(null);
+        txtharga.setText(null);
         cmbstatus.setSelectedItem(null);
     }
     
@@ -100,33 +100,34 @@ public class Haldatabus extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        cmbstatus = new javax.swing.JComboBox<>();
-        cmbkelas = new javax.swing.JComboBox<>();
+        jLabel16 = new javax.swing.JLabel();
+        txtnama = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
         txtharga = new javax.swing.JTextField();
-        jSeparator7 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jLabel18 = new javax.swing.JLabel();
+        txtnopol = new javax.swing.JTextField();
+        jSeparator6 = new javax.swing.JSeparator();
         labeltambah = new javax.swing.JLabel();
         labelkeluar = new javax.swing.JLabel();
         labelsimpan = new javax.swing.JLabel();
         labeledit = new javax.swing.JLabel();
-        JLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         btnbatal = new javax.swing.JButton();
         labelhapus = new javax.swing.JLabel();
         btnhapus = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
+        jLabel17 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtnopolisi = new javax.swing.JTextField();
-        jSeparator6 = new javax.swing.JSeparator();
-        txtnama = new javax.swing.JTextField();
-        jSeparator4 = new javax.swing.JSeparator();
         txtid = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
+        cmbkelas = new javax.swing.JComboBox<>();
+        cmbstatus = new javax.swing.JComboBox<>();
         btnkeluar = new javax.swing.JButton();
         btnedit = new javax.swing.JButton();
         btnsimpan = new javax.swing.JButton();
@@ -147,7 +148,7 @@ public class Haldatabus extends javax.swing.JFrame {
                 jLabel22FocusGained(evt);
             }
         });
-        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 140, 50));
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 340, 50));
 
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\User-Interface-Exit-icon.png")); // NOI18N
@@ -189,11 +190,6 @@ public class Haldatabus extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\closeicon.png")); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 370, 30, 30));
 
-        jLabel21.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("No Polisi");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 190, 20));
-
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\save-icon.png")); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 370, 40, 30));
@@ -201,17 +197,33 @@ public class Haldatabus extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\iconbusmini.png")); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, 80, -1));
 
-        cmbstatus.setBackground(new java.awt.Color(156, 42, 225));
-        cmbstatus.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
-        cmbstatus.setForeground(new java.awt.Color(255, 255, 255));
-        cmbstatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Ready", "Not Ready", " " }));
-        jPanel1.add(cmbstatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 190, -1));
+        jLabel16.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("Nama Bus");
+        jLabel16.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jLabel16FocusGained(evt);
+            }
+        });
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 190, 20));
 
-        cmbkelas.setBackground(new java.awt.Color(156, 42, 225));
-        cmbkelas.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
-        cmbkelas.setForeground(new java.awt.Color(255, 255, 255));
-        cmbkelas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Ekonomi", "Ekonomi AC", "Bisnis", "Executive", "Executive Plus", "Super Executive", " ", " " }));
-        jPanel1.add(cmbkelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 190, -1));
+        txtnama.setBackground(new java.awt.Color(51, 37, 78));
+        txtnama.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+        txtnama.setForeground(new java.awt.Color(153, 153, 153));
+        txtnama.setText("Enter Nama");
+        txtnama.setBorder(null);
+        txtnama.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtnamaFocusGained(evt);
+            }
+        });
+        txtnama.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnamaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtnama, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 190, -1));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 190, 10));
 
         txtharga.setBackground(new java.awt.Color(51, 37, 78));
         txtharga.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
@@ -229,7 +241,35 @@ public class Haldatabus extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtharga, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 190, -1));
-        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 190, 10));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 190, 10));
+
+        jLabel18.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("Harga");
+        jLabel18.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jLabel18FocusGained(evt);
+            }
+        });
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 190, 20));
+
+        txtnopol.setBackground(new java.awt.Color(51, 37, 78));
+        txtnopol.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+        txtnopol.setForeground(new java.awt.Color(153, 153, 153));
+        txtnopol.setText("Enter No Polisi");
+        txtnopol.setBorder(null);
+        txtnopol.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtnopolFocusGained(evt);
+            }
+        });
+        txtnopol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnopolActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtnopol, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 190, -1));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 190, 10));
 
         labeltambah.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
         labeltambah.setForeground(new java.awt.Color(51, 37, 78));
@@ -262,11 +302,6 @@ public class Haldatabus extends javax.swing.JFrame {
         labeledit.setFocusable(false);
         labeledit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel1.add(labeledit, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, 80, 30));
-
-        JLabel3.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        JLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        JLabel3.setText("Status");
-        jPanel1.add(JLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 190, 20));
 
         jLabel6.setFont(new java.awt.Font("Berlin Sans FB", 0, 10)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -318,17 +353,21 @@ public class Haldatabus extends javax.swing.JFrame {
         });
         jPanel1.add(btnhapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 370, 90, 30));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, -1, -1));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 190, 10));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 190, 10));
+
+        jLabel17.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(51, 37, 78));
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 20, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Nama Bus");
+        jLabel14.setText("No Polisi");
         jLabel14.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jLabel14FocusGained(evt);
             }
         });
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, 20));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 190, 20));
 
         jLabel15.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
@@ -338,48 +377,12 @@ public class Haldatabus extends javax.swing.JFrame {
                 jLabel15FocusGained(evt);
             }
         });
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, 20));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 190, 20));
 
         jLabel3.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Kelas Bus");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 170, -1));
-
-        txtnopolisi.setBackground(new java.awt.Color(51, 37, 78));
-        txtnopolisi.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-        txtnopolisi.setForeground(new java.awt.Color(153, 153, 153));
-        txtnopolisi.setText("Enter No Polisi");
-        txtnopolisi.setBorder(null);
-        txtnopolisi.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtnopolisiFocusGained(evt);
-            }
-        });
-        txtnopolisi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtnopolisiActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtnopolisi, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 190, -1));
-        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 190, 10));
-
-        txtnama.setBackground(new java.awt.Color(51, 37, 78));
-        txtnama.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-        txtnama.setForeground(new java.awt.Color(153, 153, 153));
-        txtnama.setText("Enter Nama Bus ");
-        txtnama.setBorder(null);
-        txtnama.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtnamaFocusGained(evt);
-            }
-        });
-        txtnama.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtnamaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtnama, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 190, -1));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 190, 10));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 170, -1));
 
         txtid.setBackground(new java.awt.Color(51, 37, 78));
         txtid.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
@@ -396,12 +399,24 @@ public class Haldatabus extends javax.swing.JFrame {
                 txtidActionPerformed(evt);
             }
         });
-        jPanel1.add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 190, -1));
+        jPanel1.add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 190, -1));
 
         jLabel20.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("Harga");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 190, 20));
+        jLabel20.setText("Status");
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 80, 20));
+
+        cmbkelas.setBackground(new java.awt.Color(156, 42, 225));
+        cmbkelas.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
+        cmbkelas.setForeground(new java.awt.Color(255, 255, 255));
+        cmbkelas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Ekonomi", "Ekonomi AC", "Bisnis", "Executive", "Executive Plus", "Super Executive", " " }));
+        jPanel1.add(cmbkelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 190, -1));
+
+        cmbstatus.setBackground(new java.awt.Color(156, 42, 225));
+        cmbstatus.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
+        cmbstatus.setForeground(new java.awt.Color(255, 255, 255));
+        cmbstatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Ready", "Not Ready" }));
+        jPanel1.add(cmbstatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 190, -1));
 
         btnkeluar.setBackground(new java.awt.Color(51, 37, 78));
         btnkeluar.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
@@ -462,15 +477,10 @@ public class Haldatabus extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tabeljadwal);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 480, 250));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 480, 250));
 
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Pictures\\leftPanelBack.png")); // NOI18N
         jLabel4.setText("ddd");
-        jLabel4.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jLabel4FocusGained(evt);
-            }
-        });
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -525,10 +535,9 @@ public class Haldatabus extends javax.swing.JFrame {
     }//GEN-LAST:event_txtidFocusGained
 
     private void btnsimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsimpanActionPerformed
-        // TODO add your handling code here:
-        
+
         try{
-            String sql = "INSERT INTO formdatabus VALUE ('"+txtid.getText()+"','"+txtnama.getText() +"','"+cmbkelas.getSelectedItem()+"','"+txtnopolisi.getText()+"','"+txtharga.getText()+"','"+cmbstatus.getSelectedItem()+"')";
+            String sql = "INSERT INTO formdatabus VALUE ('"+txtid.getText()+"','"+ txtnama.getText() +"','"+cmbkelas.getSelectedItem()+"','"+ txtnopol.getText()+"','"+txtharga.getText()+"','"+cmbstatus.getSelectedItem()+"')";
             java.sql.Connection con = (Connection)Konfig.configDB();
             java.sql.PreparedStatement pst = con.prepareStatement(sql);
             pst.execute();
@@ -543,8 +552,9 @@ public class Haldatabus extends javax.swing.JFrame {
 
     private void btneditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditActionPerformed
         // TODO add your handling code here:
+
         try{
-            String sql = "INSERT formdatabus set id ='"+ txtid.getText()+"',nama ='"+ txtnama.getText() +"',kelas ='"+ cmbkelas.getSelectedItem()+"',nopol ='"+ txtnopolisi.getText()+"',harga ='"+ txtharga.getText()+"',status = '"+cmbstatus.getSelectedItem()+"'"; 
+            String sql = "INSERT formdatabus set id ='"+ txtid.getText()+"',nama ='"+ txtnama.getText() +"',kelas ='"+ cmbkelas.getSelectedItem()+"',nopol ='"+ txtnopol.getText()+"',harga ='"+ txtharga.getText()+"',status ='"+cmbstatus.getSelectedItem()+"'"; 
             java.sql.Connection conn= (Connection)Konfig.configDB();
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
             pst.execute();
@@ -589,15 +599,18 @@ public class Haldatabus extends javax.swing.JFrame {
         txtid.setText(id);
         
         String nama = tabeljadwal.getValueAt(baris, 2).toString();
-        txtid.setText(nama);
+        txtnama.setText(nama);
         
         String kelas = tabeljadwal.getValueAt(baris, 3).toString();
         cmbkelas.setSelectedItem(kelas);
         
-        String harga = tabeljadwal.getValueAt(baris, 4).toString();
-        txtid.setText(harga);
+        String nopol = tabeljadwal.getValueAt(baris, 4).toString();
+        txtnopol.setText(nopol);
         
-        String status = tabeljadwal.getValueAt(baris, 5).toString();
+        String harga = tabeljadwal.getValueAt(baris, 5).toString();
+        txtharga.setText(harga);
+        
+        String status = tabeljadwal.getValueAt(baris, 6).toString();
         cmbstatus.setSelectedItem(status);
         
     }//GEN-LAST:event_tabeljadwalMouseClicked
@@ -608,6 +621,14 @@ public class Haldatabus extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnmenuActionPerformed
 
+    private void jLabel22FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel22FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel22FocusGained
+
+    private void jLabel16FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel16FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel16FocusGained
+
     private void txtnamaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtnamaFocusGained
         // TODO add your handling code here:
     }//GEN-LAST:event_txtnamaFocusGained
@@ -615,14 +636,6 @@ public class Haldatabus extends javax.swing.JFrame {
     private void txtnamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnamaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtnamaActionPerformed
-
-    private void txtnopolisiFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtnopolisiFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtnopolisiFocusGained
-
-    private void txtnopolisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnopolisiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtnopolisiActionPerformed
 
     private void txthargaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txthargaFocusGained
         // TODO add your handling code here:
@@ -632,14 +645,17 @@ public class Haldatabus extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txthargaActionPerformed
 
-    private void jLabel22FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel22FocusGained
+    private void jLabel18FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel18FocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel22FocusGained
+    }//GEN-LAST:event_jLabel18FocusGained
 
-    private void jLabel4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel4FocusGained
+    private void txtnopolFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtnopolFocusGained
         // TODO add your handling code here:
-        txtnama.setText("");
-    }//GEN-LAST:event_jLabel4FocusGained
+    }//GEN-LAST:event_txtnopolFocusGained
+
+    private void txtnopolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnopolActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnopolActionPerformed
 
     /**
      * @param args the command line arguments
@@ -708,7 +724,6 @@ public class Haldatabus extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel JLabel3;
     private javax.swing.JButton btnbatal;
     private javax.swing.JButton btnedit;
     private javax.swing.JButton btnhapus;
@@ -721,9 +736,11 @@ public class Haldatabus extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -737,8 +754,8 @@ public class Haldatabus extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JSeparator jSeparator7;
     private javax.swing.JLabel labeledit;
     private javax.swing.JLabel labelhapus;
     private javax.swing.JLabel labelkeluar;
@@ -749,6 +766,6 @@ public class Haldatabus extends javax.swing.JFrame {
     private javax.swing.JTextField txtharga;
     private javax.swing.JTextField txtid;
     private javax.swing.JTextField txtnama;
-    private javax.swing.JTextField txtnopolisi;
+    private javax.swing.JTextField txtnopol;
     // End of variables declaration//GEN-END:variables
 }

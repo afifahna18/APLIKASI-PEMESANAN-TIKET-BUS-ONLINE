@@ -376,7 +376,7 @@ public class SignUp extends javax.swing.JFrame {
         String fullname = txtfullname.getText();
         String username = txtusername.getText();
         String Email = txtemail.getText();
-        String password = txtpassword.getPassword().toString();
+        String password = txtpassword.getText();
         
         try{
             Statement statement = (Statement)   Konfig.configDB().createStatement();

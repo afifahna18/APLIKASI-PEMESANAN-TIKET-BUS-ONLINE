@@ -299,7 +299,8 @@ public class Signin extends javax.swing.JFrame {
                     
                 }else{
                     JOptionPane.showMessageDialog(null,"FAILED LOGIN","PESAN",JOptionPane.ERROR_MESSAGE);
-             
+                    txtusername.setText("");
+                    txtpassword.setText("");
                     }}
            catch (Exception e){
                 JOptionPane.showMessageDialog(null, e); 

@@ -536,7 +536,9 @@ public class Haldatauser extends javax.swing.JFrame {
     private void btneditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditActionPerformed
         // TODO add your handling code here:
         try{
-            String sql = "INSERT formdatauser set id ='"+ txtid.getText()+"',nama ='"+ txtnama.getText() +"',jeniskelamin ='"+ cmbjk.getSelectedItem()+"',nohp ='"+ txtnohp.getText()+"',agama ='"+ cmbagama.getSelectedItem()+"',alamat ='"+txtalamat.getText()+"'"; 
+            String sql = "INSERT formdatauser set id ='"+ txtid.getText()+"',nama ='"+ txtnama.getText() +"',"
+                    + "jeniskelamin ='"+ cmbjk.getSelectedItem()+"',nohp ='"+ txtnohp.getText()+"',"
+                    + "agama ='"+ cmbagama.getSelectedItem()+"',alamat ='"+txtalamat.getText()+"'"; 
             java.sql.Connection conn= (Connection)Konfig.configDB();
             java.sql.PreparedStatement pst = conn.prepareStatement(sql);
             pst.execute();
