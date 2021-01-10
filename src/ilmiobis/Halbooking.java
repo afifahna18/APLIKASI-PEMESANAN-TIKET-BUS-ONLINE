@@ -33,52 +33,9 @@ import java.util.logging.Logger;
 public class Halbooking extends javax.swing.JFrame {
     
     
-    private void kosongkan_form(){
-        txtidbooking.setEditable(true);
-        txtidbooking.setText(null);
-        txttanggal.setDate(null);
-        cmbnamapenumpang.setSelectedItem(null);
-        cmbTujuan.setSelectedItem(null);
-        cmbasal.setSelectedItem(null);
-    }
+ 
     
-    private void tampilkan_data(){
-        DefaultTableModel model = new DefaultTableModel();
-        model.addColumn("NO");
-        model.addColumn("ID");
-        model.addColumn("TANGGAL");
-        model.addColumn("JAM");
-        model.addColumn("TUJUAN");
-        model.addColumn("ASAL");
-        
-        try{
-            int no  = 1;
-            String sql = "SELECT * From formjadwal";
-            java.sql.Connection conn=(Connection)Konfig.configDB();
-            java.sql.Statement stm = conn.createStatement();
-            java.sql.ResultSet res = stm.executeQuery(sql);
-            
-            while (res.next()){
-            model.addRow(new Object[]{no++,res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5)});
-            tabeljadwal.setModel(model);}
-        }catch(SQLException e){
-            System.out.println("Error:" + e.getMessage());
-        }
-    }
     
-    public static Date getTanggalFromTable(JTable table, int kolom){
-        JTable tabel = table;
-        String str_tgl = String.valueOf(tabel.getValueAt(tabel.getSelectedRow(),kolom));
-        Date tanggal = null;
-        try{
-            tanggal = new SimpleDateFormat("yyy-MM-dd").parse(str_tgl);
-            
-        }catch(ParseException ex){
-            Logger.getLogger(Halbooking.class.getName()).log(Level.SEVERE,null,ex);
-            
-        }
-        return tanggal;
-    }
     
        
 
@@ -89,8 +46,6 @@ public class Halbooking extends javax.swing.JFrame {
     
     public Halbooking() {
         initComponents();
-        tampilkan_data();
-        kosongkan_form();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2,dim.height/2-this.getSize().height/2);
         this.setBackground(new Color(0,0,0,0));
@@ -121,21 +76,21 @@ public class Halbooking extends javax.swing.JFrame {
         labelkeluar = new javax.swing.JLabel();
         labelsimpan = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        cmbidbus = new javax.swing.JComboBox<>();
+        cmbjenisbus = new javax.swing.JComboBox<>();
         cmbnamapenumpang = new javax.swing.JComboBox<>();
         cmbidjadwal = new javax.swing.JComboBox<>();
-        btnmenu2 = new javax.swing.JButton();
-        btnmenu1 = new javax.swing.JButton();
+        btnbayar = new javax.swing.JButton();
+        btnmenu = new javax.swing.JButton();
         labelkeluar1 = new javax.swing.JLabel();
         labeledit = new javax.swing.JLabel();
         JLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        cmbasal1 = new javax.swing.JComboBox<>();
+        cmbidbus = new javax.swing.JComboBox<>();
         jLabel23 = new javax.swing.JLabel();
         btnbatal = new javax.swing.JButton();
         labelhapus = new javax.swing.JLabel();
         btnhapus = new javax.swing.JButton();
-        cmbTujuan2 = new javax.swing.JComboBox<>();
+        cmbjam = new javax.swing.JComboBox<>();
         JLabel5 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         txtharga = new javax.swing.JTextField();
@@ -148,7 +103,7 @@ public class Halbooking extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtidbooking = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
-        cmbTujuan = new javax.swing.JComboBox<>();
+        cmbtujuan = new javax.swing.JComboBox<>();
         cmbasal = new javax.swing.JComboBox<>();
         btnkeluar = new javax.swing.JButton();
         btnedit = new javax.swing.JButton();
@@ -254,11 +209,11 @@ public class Halbooking extends javax.swing.JFrame {
         });
         jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, 20));
 
-        cmbidbus.setBackground(new java.awt.Color(156, 42, 225));
-        cmbidbus.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
-        cmbidbus.setForeground(new java.awt.Color(255, 255, 255));
-        cmbidbus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "07.00", "09.00", "11.00", "13.00", "15.00", "17.00", "19.00", "21.00", "23.00", " " }));
-        jPanel1.add(cmbidbus, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 190, -1));
+        cmbjenisbus.setBackground(new java.awt.Color(156, 42, 225));
+        cmbjenisbus.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
+        cmbjenisbus.setForeground(new java.awt.Color(255, 255, 255));
+        cmbjenisbus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "07.00", "09.00", "11.00", "13.00", "15.00", "17.00", "19.00", "21.00", "23.00", " " }));
+        jPanel1.add(cmbjenisbus, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 190, -1));
 
         cmbnamapenumpang.setBackground(new java.awt.Color(156, 42, 225));
         cmbnamapenumpang.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
@@ -272,29 +227,29 @@ public class Halbooking extends javax.swing.JFrame {
         cmbidjadwal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "07.00", "09.00", "11.00", "13.00", "15.00", "17.00", "19.00", "21.00", "23.00", " " }));
         jPanel1.add(cmbidjadwal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 190, -1));
 
-        btnmenu2.setBackground(new java.awt.Color(51, 37, 78));
-        btnmenu2.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        btnmenu2.setForeground(new java.awt.Color(51, 37, 78));
-        btnmenu2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\New folder\\Rectangle 1.png")); // NOI18N
-        btnmenu2.setBorder(null);
-        btnmenu2.addActionListener(new java.awt.event.ActionListener() {
+        btnbayar.setBackground(new java.awt.Color(51, 37, 78));
+        btnbayar.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        btnbayar.setForeground(new java.awt.Color(51, 37, 78));
+        btnbayar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\New folder\\Rectangle 1.png")); // NOI18N
+        btnbayar.setBorder(null);
+        btnbayar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnmenu2ActionPerformed(evt);
+                btnbayarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnmenu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 90, 90));
+        jPanel1.add(btnbayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 90, 90));
 
-        btnmenu1.setBackground(new java.awt.Color(51, 37, 78));
-        btnmenu1.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        btnmenu1.setForeground(new java.awt.Color(51, 37, 78));
-        btnmenu1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\btnSignUpSwitch2.png")); // NOI18N
-        btnmenu1.setBorder(null);
-        btnmenu1.addActionListener(new java.awt.event.ActionListener() {
+        btnmenu.setBackground(new java.awt.Color(51, 37, 78));
+        btnmenu.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        btnmenu.setForeground(new java.awt.Color(51, 37, 78));
+        btnmenu.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\btnSignUpSwitch2.png")); // NOI18N
+        btnmenu.setBorder(null);
+        btnmenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnmenu1ActionPerformed(evt);
+                btnmenuActionPerformed(evt);
             }
         });
-        jPanel1.add(btnmenu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 30));
+        jPanel1.add(btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 30));
 
         labelkeluar1.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
         labelkeluar1.setForeground(new java.awt.Color(51, 37, 78));
@@ -315,7 +270,7 @@ public class Halbooking extends javax.swing.JFrame {
         JLabel3.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         JLabel3.setForeground(new java.awt.Color(255, 255, 255));
         JLabel3.setText("Tujuan");
-        jPanel1.add(JLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 190, 20));
+        jPanel1.add(JLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 190, 20));
 
         jLabel6.setFont(new java.awt.Font("Berlin Sans FB", 0, 10)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -327,16 +282,16 @@ public class Halbooking extends javax.swing.JFrame {
         });
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 60, -1, 20));
 
-        cmbasal1.setBackground(new java.awt.Color(156, 42, 225));
-        cmbasal1.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
-        cmbasal1.setForeground(new java.awt.Color(255, 255, 255));
-        cmbasal1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Jakarta", "Depok", "Bekasi", "Tangerang", "Bandung", "Bogor", "Tasikmalaya", "Karawang", "Cikarang", "Banten", "Purwakarta" }));
-        jPanel1.add(cmbasal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 190, 20));
+        cmbidbus.setBackground(new java.awt.Color(156, 42, 225));
+        cmbidbus.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
+        cmbidbus.setForeground(new java.awt.Color(255, 255, 255));
+        cmbidbus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Jakarta", "Depok", "Bekasi", "Tangerang", "Bandung", "Bogor", "Tasikmalaya", "Karawang", "Cikarang", "Banten", "Purwakarta" }));
+        jPanel1.add(cmbidbus, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 190, 20));
 
         jLabel23.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setText("ID Bus");
-        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 190, -1));
+        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 190, -1));
 
         btnbatal.setBackground(new java.awt.Color(51, 37, 78));
         btnbatal.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\btnSignUpSwitch2.png")); // NOI18N
@@ -378,16 +333,21 @@ public class Halbooking extends javax.swing.JFrame {
         });
         jPanel1.add(btnhapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 150, 90, 30));
 
-        cmbTujuan2.setBackground(new java.awt.Color(156, 42, 225));
-        cmbTujuan2.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
-        cmbTujuan2.setForeground(new java.awt.Color(255, 255, 255));
-        cmbTujuan2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Jakarta", "Depok", "Bekasi", "Tangerang", "Bandung", "Bogor", "Banten", "Tasikmalaya", "Karawang", "Cikarang", "Purwakarta", " " }));
-        jPanel1.add(cmbTujuan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 190, -1));
+        cmbjam.setBackground(new java.awt.Color(156, 42, 225));
+        cmbjam.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
+        cmbjam.setForeground(new java.awt.Color(255, 255, 255));
+        cmbjam.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Jakarta", "Depok", "Bekasi", "Tangerang", "Bandung", "Bogor", "Banten", "Tasikmalaya", "Karawang", "Cikarang", "Purwakarta", " " }));
+        cmbjam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbjamActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmbjam, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 190, -1));
 
         JLabel5.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         JLabel5.setForeground(new java.awt.Color(255, 255, 255));
         JLabel5.setText("Jam Keberangkatan");
-        jPanel1.add(JLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 190, 20));
+        jPanel1.add(JLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 190, 30));
 
         jLabel21.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
@@ -468,19 +428,19 @@ public class Halbooking extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("Asal");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 190, 20));
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 190, 20));
 
-        cmbTujuan.setBackground(new java.awt.Color(156, 42, 225));
-        cmbTujuan.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
-        cmbTujuan.setForeground(new java.awt.Color(255, 255, 255));
-        cmbTujuan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Jakarta", "Depok", "Bekasi", "Tangerang", "Bandung", "Bogor", "Banten", "Tasikmalaya", "Karawang", "Cikarang", "Purwakarta", " " }));
-        jPanel1.add(cmbTujuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 190, -1));
+        cmbtujuan.setBackground(new java.awt.Color(156, 42, 225));
+        cmbtujuan.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
+        cmbtujuan.setForeground(new java.awt.Color(255, 255, 255));
+        cmbtujuan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Jakarta", "Depok", "Bekasi", "Tangerang", "Bandung", "Bogor", "Banten", "Tasikmalaya", "Karawang", "Cikarang", "Purwakarta", " " }));
+        jPanel1.add(cmbtujuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 190, -1));
 
         cmbasal.setBackground(new java.awt.Color(156, 42, 225));
         cmbasal.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
         cmbasal.setForeground(new java.awt.Color(255, 255, 255));
         cmbasal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Jakarta", "Depok", "Bekasi", "Tangerang", "Bandung", "Bogor", "Tasikmalaya", "Karawang", "Cikarang", "Banten", "Purwakarta" }));
-        jPanel1.add(cmbasal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 190, -1));
+        jPanel1.add(cmbasal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 190, -1));
 
         btnkeluar.setBackground(new java.awt.Color(51, 37, 78));
         btnkeluar.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
@@ -580,17 +540,6 @@ public class Halbooking extends javax.swing.JFrame {
 
     private void btnhapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhapusActionPerformed
         // TODO add your handling code here:
-        try{
-            String sql = "DELETE FROM formjadwal WHERE id ='" + txtidbooking.getText() + "'";
-            java.sql.Connection conn = (Connection)Konfig.configDB();
-            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
-            pst.execute();
-            JOptionPane.showMessageDialog(null, "HAPUS DATA BERHASIL");
-        }catch(HeadlessException | SQLException e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
-        }
-        tampilkan_data();
-        kosongkan_form();
     }//GEN-LAST:event_btnhapusActionPerformed
 
     private void jLabel14FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel14FocusGained
@@ -603,42 +552,10 @@ public class Halbooking extends javax.swing.JFrame {
 
     private void btnsimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsimpanActionPerformed
         // TODO add your handling code here:
-        String tampilan = "yyyy-MM-dd";
-        SimpleDateFormat fm = new SimpleDateFormat(tampilan);
-        String tanggal = String.valueOf(fm.format(txttanggal.getDate()));
-        
-        try{
-            String sql = "INSERT INTO formjadwal VALUE ('"+txtidbooking.getText()+"','"+tanggal +"','"+cmbnamapenumpang.getSelectedItem()+"','"+cmbTujuan.getSelectedItem()+"','"+cmbasal.getSelectedItem()+"')";
-            java.sql.Connection con = (Connection)Konfig.configDB();
-            java.sql.PreparedStatement pst = con.prepareStatement(sql);
-            pst.execute();
-            JOptionPane.showMessageDialog(null, "SIMPAN DATA BERHASIL");
-        }catch(HeadlessException | SQLException e){
-            JOptionPane.showMessageDialog(this, "SIMPAN DATA GAGAL");
-        }
-        tampilkan_data();
-        kosongkan_form();
-
     }//GEN-LAST:event_btnsimpanActionPerformed
 
     private void btneditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditActionPerformed
         // TODO add your handling code here:
-        String tampilan = "yyyy-MM-dd";
-        SimpleDateFormat fm = new SimpleDateFormat(tampilan);
-        String tanggal = String.valueOf(fm.format(txttanggal.getDate()));
-        try{
-            String sql = "INSERT formjadwal set id ='"+ txtidbooking.getText()+"',tanggal ='"+ tanggal +"',jam ='"+ cmbnamapenumpang.getSelectedItem()+"',tujuan ='"+ cmbTujuan.getSelectedItem()+"',asal ='"+ cmbasal.getSelectedItem()+"' On Duplicate Key Update id ='"+ txtidbooking.getText()+"',tanggal ='"+ tanggal+"',jam ='"+ cmbnamapenumpang.getSelectedItem()+"',tujuan ='"+ cmbTujuan.getSelectedItem()+"',asal ='"+ cmbasal.getSelectedItem()+"'"; 
-            java.sql.Connection conn= (Connection)Konfig.configDB();
-            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
-            pst.execute();
-            JOptionPane.showMessageDialog(null, "EDIT DATA BERHASIL");
-                    
-        }catch(HeadlessException | SQLException e){
-            JOptionPane.showMessageDialog(this,e.getMessage());
-        }
-        tampilkan_data();
-        kosongkan_form();
-        //id_dataa();
     }//GEN-LAST:event_btneditActionPerformed
 
     private void btnkeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnkeluarActionPerformed
@@ -647,7 +564,7 @@ public class Halbooking extends javax.swing.JFrame {
     }//GEN-LAST:event_btnkeluarActionPerformed
 
     private void btnbatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbatalActionPerformed
-        kosongkan_form();
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnbatalActionPerformed
 
     private void btnbatalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnbatalMouseClicked
@@ -666,22 +583,6 @@ public class Halbooking extends javax.swing.JFrame {
 
     private void tabeljadwalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabeljadwalMouseClicked
         // TODO add your handling code here:
-        int baris = tabeljadwal.rowAtPoint(evt.getPoint());
-        
-        String id = tabeljadwal.getValueAt(baris, 1).toString();
-        txtidbooking.setText(id);
-        
-        txttanggal.setDate(getTanggalFromTable(tabeljadwal, 2));
-        
-        String jam = tabeljadwal.getValueAt(baris, 3).toString();
-        cmbnamapenumpang.setSelectedItem(jam);
-        
-        String tujuan = tabeljadwal.getValueAt(baris, 4).toString();
-        cmbTujuan.setSelectedItem(tujuan);
-        
-        String Asal = tabeljadwal.getValueAt(baris, 5).toString();
-        cmbasal.setSelectedItem(Asal);
-        
     }//GEN-LAST:event_tabeljadwalMouseClicked
 
     private void jLabel22FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel22FocusGained
@@ -708,13 +609,17 @@ public class Halbooking extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel16FocusGained
 
-    private void btnmenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenu1ActionPerformed
+    private void btnmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnmenu1ActionPerformed
+        new Halmenu().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnmenuActionPerformed
 
-    private void btnmenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenu2ActionPerformed
+    private void btnbayarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbayarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnmenu2ActionPerformed
+        new Halmenu().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnbayarActionPerformed
 
     private void txtidbookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidbookingActionPerformed
         // TODO add your handling code here:
@@ -722,8 +627,11 @@ public class Halbooking extends javax.swing.JFrame {
 
     private void txtidbookingFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtidbookingFocusGained
         // TODO add your handling code here:
-        txtidbooking.setText("");
     }//GEN-LAST:event_txtidbookingFocusGained
+
+    private void cmbjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbjamActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbjamActionPerformed
 
     /**
      * @param args the command line arguments
@@ -780,20 +688,20 @@ public class Halbooking extends javax.swing.JFrame {
     private javax.swing.JLabel JLabel4;
     private javax.swing.JLabel JLabel5;
     private javax.swing.JButton btnbatal;
+    private javax.swing.JButton btnbayar;
     private javax.swing.JButton btnedit;
     private javax.swing.JButton btnhapus;
     private javax.swing.JButton btnkeluar;
-    private javax.swing.JButton btnmenu1;
-    private javax.swing.JButton btnmenu2;
+    private javax.swing.JButton btnmenu;
     private javax.swing.JButton btnsimpan;
-    private javax.swing.JComboBox<String> cmbTujuan;
     private javax.swing.JComboBox<String> cmbTujuan1;
-    private javax.swing.JComboBox<String> cmbTujuan2;
     private javax.swing.JComboBox<String> cmbasal;
-    private javax.swing.JComboBox<String> cmbasal1;
     private javax.swing.JComboBox<String> cmbidbus;
     private javax.swing.JComboBox<String> cmbidjadwal;
+    private javax.swing.JComboBox<String> cmbjam;
+    private javax.swing.JComboBox<String> cmbjenisbus;
     private javax.swing.JComboBox<String> cmbnamapenumpang;
+    private javax.swing.JComboBox<String> cmbtujuan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel14;

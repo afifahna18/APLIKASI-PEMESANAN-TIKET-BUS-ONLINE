@@ -377,7 +377,7 @@ public class Halmenu extends javax.swing.JFrame {
 
     private void btnjadwalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjadwalActionPerformed
         // TODO add your handling code here:
-        new Haldatabus().setVisible(true);
+        new Haldatajadwal().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnjadwalActionPerformed
 
