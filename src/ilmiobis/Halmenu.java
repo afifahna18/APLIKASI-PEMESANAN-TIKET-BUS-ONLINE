@@ -87,7 +87,7 @@ public class Halmenu extends javax.swing.JFrame {
                 jLabel25FocusGained(evt);
             }
         });
-        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 220, 40, 50));
+        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, 40, 50));
 
         jLabel24.setFont(new java.awt.Font("Berlin Sans FB", 1, 18)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
@@ -97,7 +97,7 @@ public class Halmenu extends javax.swing.JFrame {
                 jLabel24FocusGained(evt);
             }
         });
-        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 50, 50));
+        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, 50, 50));
 
         jLabel23.setFont(new java.awt.Font("Berlin Sans FB", 1, 24)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
@@ -107,7 +107,7 @@ public class Halmenu extends javax.swing.JFrame {
                 jLabel23FocusGained(evt);
             }
         });
-        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 180, 50));
+        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 180, 50));
 
         jLabel20.setFont(new java.awt.Font("Berlin Sans FB", 1, 18)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
@@ -117,7 +117,7 @@ public class Halmenu extends javax.swing.JFrame {
                 jLabel20FocusGained(evt);
             }
         });
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 80, 50));
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 80, 50));
 
         jLabel14.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
@@ -127,7 +127,7 @@ public class Halmenu extends javax.swing.JFrame {
                 jLabel14FocusGained(evt);
             }
         });
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 100, -1));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 100, -1));
 
         jLabel19.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
@@ -138,7 +138,7 @@ public class Halmenu extends javax.swing.JFrame {
                 jLabel19FocusGained(evt);
             }
         });
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 100, 110));
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 100, 110));
 
         jLabel16.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
@@ -148,7 +148,7 @@ public class Halmenu extends javax.swing.JFrame {
                 jLabel16FocusGained(evt);
             }
         });
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, 120, 120));
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, 120, 120));
 
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\User-Interface-Exit-icon.png")); // NOI18N
@@ -163,7 +163,7 @@ public class Halmenu extends javax.swing.JFrame {
                 jLabel18FocusGained(evt);
             }
         });
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 100, 100));
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 100, 100));
 
         jLabel21.setFont(new java.awt.Font("Berlin Sans FB", 0, 48)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
@@ -183,7 +183,7 @@ public class Halmenu extends javax.swing.JFrame {
                 jLabel22FocusGained(evt);
             }
         });
-        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, 120, 50));
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 140, 120, 50));
 
         labelkeluar1.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
         labelkeluar1.setForeground(new java.awt.Color(51, 37, 78));
@@ -238,7 +238,7 @@ public class Halmenu extends javax.swing.JFrame {
                 jLabel15FocusGained(evt);
             }
         });
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 100, 100));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 100, 100));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\iconbusmini.png")); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, 80, -1));
@@ -263,7 +263,7 @@ public class Halmenu extends javax.swing.JFrame {
                 btnbusActionPerformed(evt);
             }
         });
-        jPanel1.add(btnbus, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 160, 180));
+        jPanel1.add(btnbus, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, 160, 180));
 
         btntransaction.setBackground(new java.awt.Color(51, 37, 78));
         btntransaction.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
@@ -275,7 +275,7 @@ public class Halmenu extends javax.swing.JFrame {
                 btntransactionActionPerformed(evt);
             }
         });
-        jPanel1.add(btntransaction, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 260, 130));
+        jPanel1.add(btntransaction, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 260, 130));
 
         btnbooking.setBackground(new java.awt.Color(51, 37, 78));
         btnbooking.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
@@ -287,7 +287,7 @@ public class Halmenu extends javax.swing.JFrame {
                 btnbookingActionPerformed(evt);
             }
         });
-        jPanel1.add(btnbooking, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 260, 130));
+        jPanel1.add(btnbooking, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 260, 130));
 
         btnjadwal.setBackground(new java.awt.Color(51, 37, 78));
         btnjadwal.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
@@ -299,7 +299,7 @@ public class Halmenu extends javax.swing.JFrame {
                 btnjadwalActionPerformed(evt);
             }
         });
-        jPanel1.add(btnjadwal, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 160, 180));
+        jPanel1.add(btnjadwal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 160, 180));
 
         btnuser.setBackground(new java.awt.Color(51, 37, 78));
         btnuser.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
@@ -311,7 +311,7 @@ public class Halmenu extends javax.swing.JFrame {
                 btnuserActionPerformed(evt);
             }
         });
-        jPanel1.add(btnuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 160, 180));
+        jPanel1.add(btnuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, 160, 180));
 
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Pictures\\leftPanelBack.png")); // NOI18N
         jLabel4.setText("ddd");

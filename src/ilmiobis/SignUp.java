@@ -383,11 +383,11 @@ public class SignUp extends javax.swing.JFrame {
             statement.executeUpdate("insert into signup VALUES ('" + fullname +"','" + username +
                     "','"+ Email + "','" + password +"');");
             statement.close ();
-            JOptionPane.showMessageDialog(null, "data berhasil disimpan");
+            JOptionPane.showMessageDialog(null, "BERHASIL MEMBUAT AKUN BARU");
             new Signin().show();
             this.dispose();
         }catch (Exception t){
-            JOptionPane.showMessageDialog(null, "data gagal disimpan");}
+            JOptionPane.showMessageDialog(null, "TIDAK BISA MEMBUAT AKUN");}
     }//GEN-LAST:event_btnsignupActionPerformed
 
     /**
