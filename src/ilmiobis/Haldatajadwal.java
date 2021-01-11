@@ -90,7 +90,6 @@ public class Haldatajadwal extends javax.swing.JFrame {
     public Haldatajadwal() {
         initComponents();
         tampilkan_data();
-        kosongkan_form();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2,dim.height/2-this.getSize().height/2);
         this.setBackground(new Color(0,0,0,0));
@@ -533,7 +532,6 @@ public class Haldatajadwal extends javax.swing.JFrame {
 
     private void btnbatalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnbatalMouseClicked
         // TODO add your handling code here:
-        
     }//GEN-LAST:event_btnbatalMouseClicked
 
     private void btnhapusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnhapusMouseClicked

@@ -383,7 +383,7 @@ public class Halmenu extends javax.swing.JFrame {
 
     private void btnbookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbookingActionPerformed
         // TODO add your handling code here:
-        new Haldatabus().setVisible(true);
+        new Halbooking().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnbookingActionPerformed
 

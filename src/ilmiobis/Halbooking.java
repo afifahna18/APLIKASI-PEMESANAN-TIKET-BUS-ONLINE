@@ -7,6 +7,7 @@ package ilmiobis;
 
 //import com.mysql.jdbc.Statement;
 //import ilmiobis.Ilmiobis;
+import static ilmiobis.Haldatajadwal.getTanggalFromTable;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.HeadlessException;
@@ -32,10 +33,63 @@ import java.util.logging.Logger;
  */
 public class Halbooking extends javax.swing.JFrame {
     
+    private void kosongkan_form(){
+        txtidbooking.setEditable(true);
+        txtidbooking.setText(null);
+        txtnama.setText(null);
+        txttanggal.setDate(null);
+        cmbtujuan.setSelectedItem(null);
+        cmbasal.setSelectedItem(null);
+        cmbjam.setSelectedItem(null);
+        cmbjenis.setSelectedItem(null);
+        cmbkelas.setSelectedItem(null);
+        txtharga.setText(null);
+    }
     
- 
     
+    private void tampilkan_data(){
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("NO");
+        model.addColumn("ID");
+        model.addColumn("NAMA");
+        model.addColumn("TANGGAL");
+        model.addColumn("TUJUAN");
+        model.addColumn("ASAL");
+        model.addColumn("JAM");
+        model.addColumn("JENIS");
+        model.addColumn("KELAS");
+        model.addColumn("HARGA");
+        
+        try{
+            int no  = 1;
+            String sql = "SELECT * From formbooking";
+            java.sql.Connection conn=(Connection)Konfig.configDB();
+            java.sql.Statement stm = conn.createStatement();
+            java.sql.ResultSet res = stm.executeQuery(sql);
+            
+            while (res.next()){
+            model.addRow(new Object[]{no++,res.getString(1),res.getString(2),res.getString(3),res.getString(4),res.getString(5),res.getString(6),res.getString(7),res.getString(8),res.getString(9)});
+            tabelbooking.setModel(model);}
+        }catch(SQLException e){
+            System.out.println("Error:" + e.getMessage());
+        }
+    }
     
+    public static Date getTanggalFromTable(JTable table, int kolom){
+        JTable tabel = table;
+        String str_tgl = String.valueOf(tabel.getValueAt(tabel.getSelectedRow(),kolom));
+        Date tanggal = null;
+        try{
+            tanggal = new SimpleDateFormat("yyy-MM-dd").parse(str_tgl);
+            
+        }catch(ParseException ex){
+            Logger.getLogger(Haldatajadwal.class.getName()).log(Level.SEVERE,null,ex);
+            
+        }
+        return tanggal;
+    }
+    
+   
     
        
 
@@ -46,6 +100,7 @@ public class Halbooking extends javax.swing.JFrame {
     
     public Halbooking() {
         initComponents();
+        tampilkan_data();
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2,dim.height/2-this.getSize().height/2);
         this.setBackground(new Color(0,0,0,0));
@@ -62,182 +117,157 @@ public class Halbooking extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        labelmenu = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        labeltambah = new javax.swing.JLabel();
-        labelkeluar = new javax.swing.JLabel();
-        labelsimpan = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        cmbjenisbus = new javax.swing.JComboBox<>();
-        cmbnamapenumpang = new javax.swing.JComboBox<>();
-        cmbidjadwal = new javax.swing.JComboBox<>();
-        btnbayar = new javax.swing.JButton();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        labelmenu3 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        jLabel66 = new javax.swing.JLabel();
+        labeltambah3 = new javax.swing.JLabel();
+        labelcetaktiket = new javax.swing.JLabel();
+        labelsimpan3 = new javax.swing.JLabel();
+        jLabel67 = new javax.swing.JLabel();
+        cmbkelas = new javax.swing.JComboBox<>();
+        btncetaktiket3 = new javax.swing.JButton();
         btnmenu = new javax.swing.JButton();
-        labelkeluar1 = new javax.swing.JLabel();
-        labeledit = new javax.swing.JLabel();
-        JLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        cmbidbus = new javax.swing.JComboBox<>();
-        jLabel23 = new javax.swing.JLabel();
-        btnbatal = new javax.swing.JButton();
-        labelhapus = new javax.swing.JLabel();
-        btnhapus = new javax.swing.JButton();
+        jLabel68 = new javax.swing.JLabel();
+        cmbjenis = new javax.swing.JComboBox<>();
+        labelkeluar4 = new javax.swing.JLabel();
+        labeledit3 = new javax.swing.JLabel();
+        JLabel6 = new javax.swing.JLabel();
+        jLabel69 = new javax.swing.JLabel();
         cmbjam = new javax.swing.JComboBox<>();
-        JLabel5 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        txtharga = new javax.swing.JTextField();
-        jSeparator4 = new javax.swing.JSeparator();
-        jSeparator1 = new javax.swing.JSeparator();
-        jSeparator3 = new javax.swing.JSeparator();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         txtidbooking = new javax.swing.JTextField();
-        jLabel20 = new javax.swing.JLabel();
+        jSeparator11 = new javax.swing.JSeparator();
+        jLabel70 = new javax.swing.JLabel();
+        btnbatal = new javax.swing.JButton();
+        labelhapus3 = new javax.swing.JLabel();
+        btnhapus = new javax.swing.JButton();
+        jLabel71 = new javax.swing.JLabel();
+        jSeparator12 = new javax.swing.JSeparator();
+        jLabel72 = new javax.swing.JLabel();
+        jLabel73 = new javax.swing.JLabel();
+        jLabel74 = new javax.swing.JLabel();
+        jLabel75 = new javax.swing.JLabel();
         cmbtujuan = new javax.swing.JComboBox<>();
         cmbasal = new javax.swing.JComboBox<>();
-        btnkeluar = new javax.swing.JButton();
         btnedit = new javax.swing.JButton();
         btnsimpan = new javax.swing.JButton();
         txttanggal = new com.toedter.calendar.JDateChooser();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tabeljadwal = new javax.swing.JTable();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tabelbooking = new javax.swing.JTable();
+        txtharga = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        txtnama = new javax.swing.JTextField();
+        jSeparator7 = new javax.swing.JSeparator();
+        btnkeluar = new javax.swing.JButton();
+        jSeparator8 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
-        JLabel4 = new javax.swing.JLabel();
-        cmbTujuan1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel16.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("Jenis Bus");
-        jLabel16.addFocusListener(new java.awt.event.FocusAdapter() {
+        jLabel59.setFont(new java.awt.Font("Berlin Sans FB", 0, 36)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel59.setText("BOOKING TIKET");
+        jLabel59.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jLabel16FocusGained(evt);
+                jLabel59FocusGained(evt);
             }
         });
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, -1, 20));
+        jPanel1.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 290, 80));
 
-        jLabel22.setFont(new java.awt.Font("Berlin Sans FB", 0, 36)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("Form Booking ");
-        jLabel22.addFocusListener(new java.awt.event.FocusAdapter() {
+        jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel60.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\User-Interface-Exit-icon.png")); // NOI18N
+        jPanel1.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 40, 30));
+
+        labelmenu3.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+        labelmenu3.setForeground(new java.awt.Color(51, 37, 78));
+        labelmenu3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelmenu3.setText("MENU");
+        labelmenu3.setFocusable(false);
+        labelmenu3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(labelmenu3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 60, 30));
+
+        jLabel61.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel61.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\icontrash.png")); // NOI18N
+        jPanel1.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 150, 30, 30));
+
+        jLabel62.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel62.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\Pencil-icon.png")); // NOI18N
+        jPanel1.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 100, 40, 30));
+
+        jLabel63.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel63.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\User-Interface-Exit-icon.png")); // NOI18N
+        jPanel1.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 40, 30));
+
+        jLabel64.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel64.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\closeicon.png")); // NOI18N
+        jPanel1.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 100, 30, 30));
+
+        jLabel65.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel65.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\save-icon.png")); // NOI18N
+        jPanel1.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 40, 30));
+
+        jLabel66.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\iconbusmini.png")); // NOI18N
+        jPanel1.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, 80, -1));
+
+        labeltambah3.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+        labeltambah3.setForeground(new java.awt.Color(51, 37, 78));
+        labeltambah3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labeltambah3.setText("BATAL");
+        labeltambah3.setFocusable(false);
+        labeltambah3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(labeltambah3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, 80, 30));
+
+        labelcetaktiket.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        labelcetaktiket.setForeground(new java.awt.Color(255, 255, 255));
+        labelcetaktiket.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelcetaktiket.setText("CETAK TIKET");
+        labelcetaktiket.setFocusable(false);
+        labelcetaktiket.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(labelcetaktiket, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 90, 90));
+
+        labelsimpan3.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+        labelsimpan3.setForeground(new java.awt.Color(51, 37, 78));
+        labelsimpan3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelsimpan3.setText("SIMPAN");
+        labelsimpan3.setFocusable(false);
+        labelsimpan3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(labelsimpan3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 150, 70, 30));
+
+        jLabel67.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jLabel67.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel67.setText("Nama Penumpang");
+        jLabel67.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jLabel22FocusGained(evt);
+                jLabel67FocusGained(evt);
             }
         });
-        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 250, 80));
+        jPanel1.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, 20));
 
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\User-Interface-Exit-icon.png")); // NOI18N
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 40, 30));
+        cmbkelas.setBackground(new java.awt.Color(156, 42, 225));
+        cmbkelas.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
+        cmbkelas.setForeground(new java.awt.Color(255, 255, 255));
+        cmbkelas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Ekonomi", "Ekonomi AC", "Bisnis", "Executive", "Executive Plus", "Super Executive", " " }));
+        jPanel1.add(cmbkelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 190, -1));
 
-        labelmenu.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-        labelmenu.setForeground(new java.awt.Color(51, 37, 78));
-        labelmenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelmenu.setText("MENU");
-        labelmenu.setFocusable(false);
-        labelmenu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(labelmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 60, 30));
-
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\icontrash.png")); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 150, 30, 30));
-
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\Pencil-icon.png")); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 100, 40, 30));
-
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\User-Interface-Exit-icon.png")); // NOI18N
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 40, 30));
-
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\closeicon.png")); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 100, 30, 30));
-
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\save-icon.png")); // NOI18N
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 40, 30));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\iconbusmini.png")); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, 80, -1));
-
-        labeltambah.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-        labeltambah.setForeground(new java.awt.Color(51, 37, 78));
-        labeltambah.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labeltambah.setText("BATAL");
-        labeltambah.setFocusable(false);
-        labeltambah.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(labeltambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, 80, 30));
-
-        labelkeluar.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        labelkeluar.setForeground(new java.awt.Color(255, 255, 255));
-        labelkeluar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelkeluar.setText("B A Y A R");
-        labelkeluar.setFocusable(false);
-        labelkeluar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(labelkeluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 70, 90));
-
-        labelsimpan.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-        labelsimpan.setForeground(new java.awt.Color(51, 37, 78));
-        labelsimpan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelsimpan.setText("SIMPAN");
-        labelsimpan.setFocusable(false);
-        labelsimpan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(labelsimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 150, 70, 30));
-
-        jLabel18.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("Nama Penumpang");
-        jLabel18.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jLabel18FocusGained(evt);
-            }
-        });
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, 20));
-
-        cmbjenisbus.setBackground(new java.awt.Color(156, 42, 225));
-        cmbjenisbus.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
-        cmbjenisbus.setForeground(new java.awt.Color(255, 255, 255));
-        cmbjenisbus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "07.00", "09.00", "11.00", "13.00", "15.00", "17.00", "19.00", "21.00", "23.00", " " }));
-        jPanel1.add(cmbjenisbus, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 190, -1));
-
-        cmbnamapenumpang.setBackground(new java.awt.Color(156, 42, 225));
-        cmbnamapenumpang.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
-        cmbnamapenumpang.setForeground(new java.awt.Color(255, 255, 255));
-        cmbnamapenumpang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "07.00", "09.00", "11.00", "13.00", "15.00", "17.00", "19.00", "21.00", "23.00", " " }));
-        jPanel1.add(cmbnamapenumpang, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 190, -1));
-
-        cmbidjadwal.setBackground(new java.awt.Color(156, 42, 225));
-        cmbidjadwal.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
-        cmbidjadwal.setForeground(new java.awt.Color(255, 255, 255));
-        cmbidjadwal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "07.00", "09.00", "11.00", "13.00", "15.00", "17.00", "19.00", "21.00", "23.00", " " }));
-        jPanel1.add(cmbidjadwal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 190, -1));
-
-        btnbayar.setBackground(new java.awt.Color(51, 37, 78));
-        btnbayar.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        btnbayar.setForeground(new java.awt.Color(51, 37, 78));
-        btnbayar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\New folder\\Rectangle 1.png")); // NOI18N
-        btnbayar.setBorder(null);
-        btnbayar.addActionListener(new java.awt.event.ActionListener() {
+        btncetaktiket3.setBackground(new java.awt.Color(51, 37, 78));
+        btncetaktiket3.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        btncetaktiket3.setForeground(new java.awt.Color(51, 37, 78));
+        btncetaktiket3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\New folder\\Rectangle 1.png")); // NOI18N
+        btncetaktiket3.setBorder(null);
+        btncetaktiket3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnbayarActionPerformed(evt);
+                btncetaktiket3ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnbayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 90, 90));
+        jPanel1.add(btncetaktiket3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 90, 90));
 
         btnmenu.setBackground(new java.awt.Color(51, 37, 78));
         btnmenu.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
@@ -249,49 +279,78 @@ public class Halbooking extends javax.swing.JFrame {
                 btnmenuActionPerformed(evt);
             }
         });
-        jPanel1.add(btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 30));
+        jPanel1.add(btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 90, 30));
 
-        labelkeluar1.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-        labelkeluar1.setForeground(new java.awt.Color(51, 37, 78));
-        labelkeluar1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelkeluar1.setText("KELUAR");
-        labelkeluar1.setFocusable(false);
-        labelkeluar1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(labelkeluar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 60, 30));
+        jLabel68.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jLabel68.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel68.setText("Jenis Bus");
+        jPanel1.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 190, 20));
 
-        labeledit.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-        labeledit.setForeground(new java.awt.Color(51, 37, 78));
-        labeledit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labeledit.setText("EDIT");
-        labeledit.setFocusable(false);
-        labeledit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(labeledit, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 100, 80, 30));
+        cmbjenis.setBackground(new java.awt.Color(156, 42, 225));
+        cmbjenis.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
+        cmbjenis.setForeground(new java.awt.Color(255, 255, 255));
+        cmbjenis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "XBUS", "Sumber Kencana", "BARAYA", "Harapan Jaya", "Damri", "Lintas JABODETABEK", "Perum PPD", "HEI TAYO", "CIPAGANTI", "BAHAGIA SELALU" }));
+        jPanel1.add(cmbjenis, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 190, -1));
 
-        JLabel3.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        JLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        JLabel3.setText("Tujuan");
-        jPanel1.add(JLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 190, 20));
+        labelkeluar4.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+        labelkeluar4.setForeground(new java.awt.Color(51, 37, 78));
+        labelkeluar4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelkeluar4.setText("KELUAR");
+        labelkeluar4.setFocusable(false);
+        labelkeluar4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(labelkeluar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 60, 30));
 
-        jLabel6.setFont(new java.awt.Font("Berlin Sans FB", 0, 10)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Come and Go With Us");
-        jLabel6.addFocusListener(new java.awt.event.FocusAdapter() {
+        labeledit3.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+        labeledit3.setForeground(new java.awt.Color(51, 37, 78));
+        labeledit3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labeledit3.setText("EDIT");
+        labeledit3.setFocusable(false);
+        labeledit3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(labeledit3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 100, 80, 30));
+
+        JLabel6.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        JLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        JLabel6.setText("Tujuan");
+        jPanel1.add(JLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 190, 20));
+
+        jLabel69.setFont(new java.awt.Font("Berlin Sans FB", 0, 10)); // NOI18N
+        jLabel69.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel69.setText("Come and Go With Us");
+        jLabel69.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jLabel6FocusGained(evt);
+                jLabel69FocusGained(evt);
             }
         });
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 60, -1, 20));
+        jPanel1.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 60, -1, 20));
 
-        cmbidbus.setBackground(new java.awt.Color(156, 42, 225));
-        cmbidbus.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
-        cmbidbus.setForeground(new java.awt.Color(255, 255, 255));
-        cmbidbus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Jakarta", "Depok", "Bekasi", "Tangerang", "Bandung", "Bogor", "Tasikmalaya", "Karawang", "Cikarang", "Banten", "Purwakarta" }));
-        jPanel1.add(cmbidbus, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 190, 20));
+        cmbjam.setBackground(new java.awt.Color(156, 42, 225));
+        cmbjam.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
+        cmbjam.setForeground(new java.awt.Color(255, 255, 255));
+        cmbjam.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "07.00", "09.00", "11.00", "13.00", "15.00", "17.00", "19.00", "21.00", "23.00" }));
+        jPanel1.add(cmbjam, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 190, -1));
 
-        jLabel23.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel23.setText("ID Bus");
-        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 190, -1));
+        txtidbooking.setBackground(new java.awt.Color(51, 37, 78));
+        txtidbooking.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+        txtidbooking.setForeground(new java.awt.Color(153, 153, 153));
+        txtidbooking.setText("Enter ID Booking");
+        txtidbooking.setBorder(null);
+        txtidbooking.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtidbookingFocusGained(evt);
+            }
+        });
+        txtidbooking.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtidbookingActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtidbooking, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 190, -1));
+        jPanel1.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 190, 20));
+
+        jLabel70.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jLabel70.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel70.setText("Jam Keberangkatan");
+        jPanel1.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 190, 20));
 
         btnbatal.setBackground(new java.awt.Color(51, 37, 78));
         btnbatal.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\btnSignUpSwitch2.png")); // NOI18N
@@ -308,13 +367,13 @@ public class Halbooking extends javax.swing.JFrame {
         });
         jPanel1.add(btnbatal, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 100, 90, 30));
 
-        labelhapus.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-        labelhapus.setForeground(new java.awt.Color(51, 37, 78));
-        labelhapus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelhapus.setText("HAPUS");
-        labelhapus.setFocusable(false);
-        labelhapus.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(labelhapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 150, 80, 30));
+        labelhapus3.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+        labelhapus3.setForeground(new java.awt.Color(51, 37, 78));
+        labelhapus3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelhapus3.setText("HAPUS");
+        labelhapus3.setFocusable(false);
+        labelhapus3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(labelhapus3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 150, 80, 30));
 
         btnhapus.setBackground(new java.awt.Color(51, 37, 78));
         btnhapus.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
@@ -333,126 +392,52 @@ public class Halbooking extends javax.swing.JFrame {
         });
         jPanel1.add(btnhapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 150, 90, 30));
 
-        cmbjam.setBackground(new java.awt.Color(156, 42, 225));
-        cmbjam.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
-        cmbjam.setForeground(new java.awt.Color(255, 255, 255));
-        cmbjam.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Jakarta", "Depok", "Bekasi", "Tangerang", "Bandung", "Bogor", "Banten", "Tasikmalaya", "Karawang", "Cikarang", "Purwakarta", " " }));
-        cmbjam.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbjamActionPerformed(evt);
-            }
-        });
-        jPanel1.add(cmbjam, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 190, -1));
-
-        JLabel5.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        JLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        JLabel5.setText("Jam Keberangkatan");
-        jPanel1.add(JLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 190, 30));
-
-        jLabel21.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("Harga");
-        jLabel21.addFocusListener(new java.awt.event.FocusAdapter() {
+        jLabel71.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jLabel71.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel71.setText("Harga");
+        jLabel71.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jLabel21FocusGained(evt);
+                jLabel71FocusGained(evt);
             }
         });
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, -1, 20));
+        jPanel1.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, -1, 20));
+        jPanel1.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, -1, -1));
 
-        txtharga.setBackground(new java.awt.Color(51, 37, 78));
-        txtharga.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-        txtharga.setForeground(new java.awt.Color(153, 153, 153));
-        txtharga.setText("Harga");
-        txtharga.setBorder(null);
-        txtharga.addFocusListener(new java.awt.event.FocusAdapter() {
+        jLabel72.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+        jLabel72.setForeground(new java.awt.Color(51, 37, 78));
+        jPanel1.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 20, -1, -1));
+
+        jLabel73.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jLabel73.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel73.setText("ID Booking");
+        jLabel73.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                txthargaFocusGained(evt);
+                jLabel73FocusGained(evt);
             }
         });
-        txtharga.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txthargaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtharga, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 190, -1));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 190, 20));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, -1, -1));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 190, 20));
+        jPanel1.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, 20));
 
-        jLabel17.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(51, 37, 78));
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 20, -1, -1));
+        jLabel74.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jLabel74.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel74.setText("Tanggal Keberangkatan");
+        jPanel1.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 170, -1));
 
-        jLabel14.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("ID jadwal");
-        jLabel14.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jLabel14FocusGained(evt);
-            }
-        });
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 190, 20));
-
-        jLabel15.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("ID Booking");
-        jLabel15.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jLabel15FocusGained(evt);
-            }
-        });
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, 20));
-
-        jLabel3.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Tanggal Keberangkatan");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 170, -1));
-
-        txtidbooking.setBackground(new java.awt.Color(51, 37, 78));
-        txtidbooking.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-        txtidbooking.setForeground(new java.awt.Color(153, 153, 153));
-        txtidbooking.setText("ID Booking");
-        txtidbooking.setBorder(null);
-        txtidbooking.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtidbookingFocusGained(evt);
-            }
-        });
-        txtidbooking.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtidbookingActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtidbooking, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 190, -1));
-
-        jLabel20.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("Asal");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 190, 20));
+        jLabel75.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jLabel75.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel75.setText("Asal");
+        jPanel1.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 190, 20));
 
         cmbtujuan.setBackground(new java.awt.Color(156, 42, 225));
         cmbtujuan.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
         cmbtujuan.setForeground(new java.awt.Color(255, 255, 255));
         cmbtujuan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Jakarta", "Depok", "Bekasi", "Tangerang", "Bandung", "Bogor", "Banten", "Tasikmalaya", "Karawang", "Cikarang", "Purwakarta", " " }));
-        jPanel1.add(cmbtujuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 190, -1));
+        jPanel1.add(cmbtujuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 190, -1));
 
         cmbasal.setBackground(new java.awt.Color(156, 42, 225));
         cmbasal.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
         cmbasal.setForeground(new java.awt.Color(255, 255, 255));
         cmbasal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Jakarta", "Depok", "Bekasi", "Tangerang", "Bandung", "Bogor", "Tasikmalaya", "Karawang", "Cikarang", "Banten", "Purwakarta" }));
-        jPanel1.add(cmbasal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 190, -1));
-
-        btnkeluar.setBackground(new java.awt.Color(51, 37, 78));
-        btnkeluar.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        btnkeluar.setForeground(new java.awt.Color(51, 37, 78));
-        btnkeluar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\btnSignUpSwitch2.png")); // NOI18N
-        btnkeluar.setBorder(null);
-        btnkeluar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnkeluarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnkeluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 90, 30));
+        jPanel1.add(cmbasal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 190, -1));
 
         btnedit.setBackground(new java.awt.Color(51, 37, 78));
         btnedit.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
@@ -482,9 +467,9 @@ public class Halbooking extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnsimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 150, 90, 30));
-        jPanel1.add(txttanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 190, -1));
+        jPanel1.add(txttanggal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 190, -1));
 
-        tabeljadwal.setModel(new javax.swing.table.DefaultTableModel(
+        tabelbooking.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -495,29 +480,76 @@ public class Halbooking extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tabeljadwal.addMouseListener(new java.awt.event.MouseAdapter() {
+        tabelbooking.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tabeljadwalMouseClicked(evt);
+                tabelbookingMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(tabeljadwal);
+        jScrollPane5.setViewportView(tabelbooking);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 480, 250));
+        jPanel1.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 480, 250));
+
+        txtharga.setBackground(new java.awt.Color(51, 37, 78));
+        txtharga.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+        txtharga.setForeground(new java.awt.Color(153, 153, 153));
+        txtharga.setText("Harga");
+        txtharga.setBorder(null);
+        txtharga.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txthargaFocusGained(evt);
+            }
+        });
+        txtharga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txthargaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtharga, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 190, -1));
+
+        jLabel19.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setText("Kelas Bus");
+        jLabel19.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jLabel19FocusGained(evt);
+            }
+        });
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, -1, 20));
+
+        txtnama.setBackground(new java.awt.Color(51, 37, 78));
+        txtnama.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+        txtnama.setForeground(new java.awt.Color(153, 153, 153));
+        txtnama.setText("Enter Nama Penumpang");
+        txtnama.setBorder(null);
+        txtnama.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtnamaFocusGained(evt);
+            }
+        });
+        txtnama.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnamaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtnama, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 190, -1));
+        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 190, 20));
+
+        btnkeluar.setBackground(new java.awt.Color(51, 37, 78));
+        btnkeluar.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        btnkeluar.setForeground(new java.awt.Color(51, 37, 78));
+        btnkeluar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\btnSignUpSwitch2.png")); // NOI18N
+        btnkeluar.setBorder(null);
+        btnkeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnkeluarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnkeluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 90, 30));
+        jPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 190, 20));
 
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Pictures\\leftPanelBack.png")); // NOI18N
         jLabel4.setText("ddd");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 450));
-
-        JLabel4.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        JLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        JLabel4.setText("Tujuan");
-        jPanel1.add(JLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 190, 20));
-
-        cmbTujuan1.setBackground(new java.awt.Color(156, 42, 225));
-        cmbTujuan1.setFont(new java.awt.Font("Ubuntu", 0, 12)); // NOI18N
-        cmbTujuan1.setForeground(new java.awt.Color(255, 255, 255));
-        cmbTujuan1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Jakarta", "Depok", "Bekasi", "Tangerang", "Bandung", "Bogor", "Banten", "Tasikmalaya", "Karawang", "Cikarang", "Purwakarta", " " }));
-        jPanel1.add(cmbTujuan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 190, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -533,93 +565,130 @@ public class Halbooking extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel6FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel6FocusGained
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jLabel6FocusGained
-
-    private void btnhapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhapusActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnhapusActionPerformed
-
-    private void jLabel14FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel14FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel14FocusGained
-
-    private void jLabel15FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel15FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel15FocusGained
-
-    private void btnsimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsimpanActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnsimpanActionPerformed
-
-    private void btneditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btneditActionPerformed
-
     private void btnkeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnkeluarActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_btnkeluarActionPerformed
 
-    private void btnbatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbatalActionPerformed
+    private void txtnamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnamaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnbatalActionPerformed
+    }//GEN-LAST:event_txtnamaActionPerformed
 
-    private void btnbatalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnbatalMouseClicked
+    private void txtnamaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtnamaFocusGained
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_btnbatalMouseClicked
+        txtnama.setText("");
+    }//GEN-LAST:event_txtnamaFocusGained
 
-    private void btnhapusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnhapusMouseClicked
+    private void jLabel19FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel19FocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnhapusMouseClicked
-
-    private void btnsimpanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnsimpanMouseClicked
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_btnsimpanMouseClicked
-
-    private void tabeljadwalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabeljadwalMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tabeljadwalMouseClicked
-
-    private void jLabel22FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel22FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel22FocusGained
-
-    private void jLabel18FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel18FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel18FocusGained
-
-    private void jLabel21FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel21FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel21FocusGained
-
-    private void txthargaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txthargaFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txthargaFocusGained
+    }//GEN-LAST:event_jLabel19FocusGained
 
     private void txthargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txthargaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txthargaActionPerformed
 
-    private void jLabel16FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel16FocusGained
+    private void txthargaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txthargaFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel16FocusGained
+        txtharga.setText("");
+    }//GEN-LAST:event_txthargaFocusGained
 
-    private void btnmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenuActionPerformed
+    private void tabelbookingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelbookingMouseClicked
         // TODO add your handling code here:
-        new Halmenu().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnmenuActionPerformed
+        int baris = tabelbooking.rowAtPoint(evt.getPoint());
+        
+        String id = tabelbooking.getValueAt(baris, 1).toString();
+        txtidbooking.setText(id);
+        
+        String nama = tabelbooking.getValueAt(baris, 2).toString();
+        txtnama.setText(nama);
+        
+        txttanggal.setDate(getTanggalFromTable(tabelbooking, 3));
+        
+        String tujuan = tabelbooking.getValueAt(baris, 4).toString();
+        cmbtujuan.setSelectedItem(tujuan);
+        
+        String asal = tabelbooking.getValueAt(baris, 5).toString();
+        cmbasal.setSelectedItem(asal);
+        
+        String jam = tabelbooking.getValueAt(baris, 6).toString();
+        cmbjam.setSelectedItem(jam);
+        
+        String jenis = tabelbooking.getValueAt(baris, 7).toString();
+        cmbjenis.setSelectedItem(jenis);
+        
+        String kelas = tabelbooking.getValueAt(baris, 8).toString();
+        cmbkelas.setSelectedItem(kelas);
+        
+        String harga = tabelbooking.getValueAt(baris, 9).toString();
+        txtharga.setText(harga);
+    }//GEN-LAST:event_tabelbookingMouseClicked
 
-    private void btnbayarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbayarActionPerformed
+    private void btnsimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsimpanActionPerformed
         // TODO add your handling code here:
-        new Halmenu().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnbayarActionPerformed
+        String tampilan = "yyyy-MM-dd";
+        SimpleDateFormat fm = new SimpleDateFormat(tampilan);
+        String tanggal = String.valueOf(fm.format(txttanggal.getDate()));
+        
+        try{
+            String sql = "INSERT INTO formbooking VALUE ('"+txtidbooking.getText()+"','"+txtnama.getText()+"','"+tanggal +"','"+cmbtujuan.getSelectedItem()+"','"+cmbasal.getSelectedItem()+"','"+cmbjam.getSelectedItem()+"','"+cmbjenis.getSelectedItem()+"','"+cmbkelas.getSelectedItem()+"','"+txtharga.getText()+"')";
+            java.sql.Connection con = (Connection)Konfig.configDB();
+            java.sql.PreparedStatement pst = con.prepareStatement(sql);
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "SIMPAN DATA BERHASIL");
+        }catch(HeadlessException | SQLException e){
+            JOptionPane.showMessageDialog(this, "SIMPAN DATA GAGAL");
+        }
+        tampilkan_data();
+        kosongkan_form();
+    }//GEN-LAST:event_btnsimpanActionPerformed
+
+    private void btnsimpanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnsimpanMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnsimpanMouseClicked
+
+    private void btneditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditActionPerformed
+        // TODO add your handling code here:
+        String tampilan = "yyyy-MM-dd";
+        SimpleDateFormat fm = new SimpleDateFormat(tampilan);
+        String tanggal = String.valueOf(fm.format(txttanggal.getDate()));
+        try{
+            String sql = "INSERT formbooking set id ='"+ txtidbooking.getText()+"',nama ='"+ txtnama.getText()+"', tanggal ='"+ tanggal +"',tujuan ='"+ cmbtujuan.getSelectedItem()+"',asal ='"+ cmbasal.getSelectedItem()+"',jam ='"+ cmbjam.getSelectedItem()+"',jenis ='"+ cmbjenis.getSelectedItem()+"',kelas ='"+ cmbkelas.getSelectedItem()+"',harga ='"+ txtharga.getText()+"' On Duplicate Key Update id ='"+ txtidbooking.getText()+"',nama ='"+ txtnama.getText()+"', tanggal ='"+ tanggal +"',tujuan ='"+ cmbtujuan.getSelectedItem()+"',asal ='"+ cmbasal.getSelectedItem()+"',jam ='"+ cmbjam.getSelectedItem()+"',jenis ='"+ cmbjenis.getSelectedItem()+"',kelas ='"+ cmbkelas.getSelectedItem()+"',harga ='"+ txtharga.getText()+"'"; 
+            java.sql.Connection conn= (Connection)Konfig.configDB();
+            java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "EDIT DATA BERHASIL");
+                    
+        }catch(HeadlessException | SQLException e){
+            JOptionPane.showMessageDialog(this,e.getMessage());
+        }
+        tampilkan_data();
+        kosongkan_form();
+    }//GEN-LAST:event_btneditActionPerformed
+
+    private void jLabel73FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel73FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel73FocusGained
+
+    private void jLabel71FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel71FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel71FocusGained
+
+    private void btnhapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhapusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnhapusActionPerformed
+
+    private void btnhapusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnhapusMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnhapusMouseClicked
+
+    private void btnbatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbatalActionPerformed
+        // TODO add your handling code here:
+        kosongkan_form();
+    }//GEN-LAST:event_btnbatalActionPerformed
+
+    private void btnbatalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnbatalMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnbatalMouseClicked
 
     private void txtidbookingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidbookingActionPerformed
         // TODO add your handling code here:
@@ -627,11 +696,30 @@ public class Halbooking extends javax.swing.JFrame {
 
     private void txtidbookingFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtidbookingFocusGained
         // TODO add your handling code here:
+        txtidbooking.setText("");
     }//GEN-LAST:event_txtidbookingFocusGained
 
-    private void cmbjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbjamActionPerformed
+    private void jLabel69FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel69FocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_cmbjamActionPerformed
+    }//GEN-LAST:event_jLabel69FocusGained
+
+    private void btnmenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmenuActionPerformed
+        // TODO add your handling code here:
+        new Halmenu().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnmenuActionPerformed
+
+    private void btncetaktiket3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncetaktiket3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btncetaktiket3ActionPerformed
+
+    private void jLabel67FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel67FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel67FocusGained
+
+    private void jLabel59FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel59FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel59FocusGained
 
     /**
      * @param args the command line arguments
@@ -674,6 +762,118 @@ public class Halbooking extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -684,58 +884,55 @@ public class Halbooking extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel JLabel3;
-    private javax.swing.JLabel JLabel4;
-    private javax.swing.JLabel JLabel5;
+    private javax.swing.JLabel JLabel6;
     private javax.swing.JButton btnbatal;
-    private javax.swing.JButton btnbayar;
+    private javax.swing.JButton btncetaktiket3;
     private javax.swing.JButton btnedit;
     private javax.swing.JButton btnhapus;
     private javax.swing.JButton btnkeluar;
     private javax.swing.JButton btnmenu;
     private javax.swing.JButton btnsimpan;
-    private javax.swing.JComboBox<String> cmbTujuan1;
     private javax.swing.JComboBox<String> cmbasal;
-    private javax.swing.JComboBox<String> cmbidbus;
-    private javax.swing.JComboBox<String> cmbidjadwal;
     private javax.swing.JComboBox<String> cmbjam;
-    private javax.swing.JComboBox<String> cmbjenisbus;
-    private javax.swing.JComboBox<String> cmbnamapenumpang;
+    private javax.swing.JComboBox<String> cmbjenis;
+    private javax.swing.JComboBox<String> cmbkelas;
     private javax.swing.JComboBox<String> cmbtujuan;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel59;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JLabel labeledit;
-    private javax.swing.JLabel labelhapus;
-    private javax.swing.JLabel labelkeluar;
-    private javax.swing.JLabel labelkeluar1;
-    private javax.swing.JLabel labelmenu;
-    private javax.swing.JLabel labelsimpan;
-    private javax.swing.JLabel labeltambah;
-    public javax.swing.JTable tabeljadwal;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JLabel labelcetaktiket;
+    private javax.swing.JLabel labeledit3;
+    private javax.swing.JLabel labelhapus3;
+    private javax.swing.JLabel labelkeluar4;
+    private javax.swing.JLabel labelmenu3;
+    private javax.swing.JLabel labelsimpan3;
+    private javax.swing.JLabel labeltambah3;
+    private javax.swing.JTable tabelbooking;
     private javax.swing.JTextField txtharga;
     private javax.swing.JTextField txtidbooking;
+    private javax.swing.JTextField txtnama;
     private com.toedter.calendar.JDateChooser txttanggal;
     // End of variables declaration//GEN-END:variables
 }
