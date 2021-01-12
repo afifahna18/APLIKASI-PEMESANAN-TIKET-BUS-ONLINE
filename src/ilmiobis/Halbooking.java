@@ -25,7 +25,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import java.util.HashMap;
+import net.sf.Jasperreports.engine.JasperfillManager;
+import net.sf.Jasperreports.engine.JasperPrint;
+import net.sf.Jasperreports.engine.JasperReport;
+import net.sf.Jasperreports.view.JasperViewer;
+import net.sf.Jasperreports.engine.JaspercompileManager;
 
 /**
  *
@@ -131,7 +136,7 @@ public class Halbooking extends javax.swing.JFrame {
         labelsimpan3 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
         cmbkelas = new javax.swing.JComboBox<>();
-        btncetaktiket3 = new javax.swing.JButton();
+        btncetaktiket = new javax.swing.JButton();
         btnmenu = new javax.swing.JButton();
         jLabel68 = new javax.swing.JLabel();
         cmbjenis = new javax.swing.JComboBox<>();
@@ -231,7 +236,7 @@ public class Halbooking extends javax.swing.JFrame {
         labelcetaktiket.setText("CETAK TIKET");
         labelcetaktiket.setFocusable(false);
         labelcetaktiket.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(labelcetaktiket, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 90, 90));
+        jPanel1.add(labelcetaktiket, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 90, 40));
 
         labelsimpan3.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
         labelsimpan3.setForeground(new java.awt.Color(51, 37, 78));
@@ -257,17 +262,17 @@ public class Halbooking extends javax.swing.JFrame {
         cmbkelas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih --", "Ekonomi", "Ekonomi AC", "Bisnis", "Executive", "Executive Plus", "Super Executive", " " }));
         jPanel1.add(cmbkelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 190, -1));
 
-        btncetaktiket3.setBackground(new java.awt.Color(51, 37, 78));
-        btncetaktiket3.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        btncetaktiket3.setForeground(new java.awt.Color(51, 37, 78));
-        btncetaktiket3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\New folder\\Rectangle 1.png")); // NOI18N
-        btncetaktiket3.setBorder(null);
-        btncetaktiket3.addActionListener(new java.awt.event.ActionListener() {
+        btncetaktiket.setBackground(new java.awt.Color(51, 37, 78));
+        btncetaktiket.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        btncetaktiket.setForeground(new java.awt.Color(51, 37, 78));
+        btncetaktiket.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\New folder\\Rectangle 1.png")); // NOI18N
+        btncetaktiket.setBorder(null);
+        btncetaktiket.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btncetaktiket3ActionPerformed(evt);
+                btncetaktiketActionPerformed(evt);
             }
         });
-        jPanel1.add(btncetaktiket3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 90, 90));
+        jPanel1.add(btncetaktiket, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 90, 90));
 
         btnmenu.setBackground(new java.awt.Color(51, 37, 78));
         btnmenu.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
@@ -709,9 +714,34 @@ public class Halbooking extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnmenuActionPerformed
 
-    private void btncetaktiket3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncetaktiket3ActionPerformed
+    private void btncetaktiketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncetaktiketActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btncetaktiket3ActionPerformed
+        java.sql.Connection con = null;
+        try {
+            String jdbcDriver = "com.mysql.jdbc.Driver";
+            Class.forName(jdbcDriver);
+            
+            String url = "jdbc:mysql://localhost:3306/ilmiobis";
+            String user = "root";
+            String pass = "";
+            
+            con = DriverManager.getConnection(url,user,pass);
+            Statement stm = con.createStatement();
+            
+            try{
+                String report = ("C:\\Users\\Afifah\\Documents\\NetBeansProjects\\Ilmiobis\\src\\ilmiobis\\struk.jrxml");
+                HashMap hash = new HashMap();
+                hash.put ("idbooking", txtidbooking.getText());
+                JasperReport JRpt = JasperCompileManager.compileReport(report);
+                JasperPrint JPrint = JasperFillManager.fillReport(JRpt, hash,con);
+                JasperViewer.viewReport(JPrint, false);
+            }catch(Exception rptexcpt){
+                System.out.print("Report Can't view because:"+rptexcpt); 
+            }
+        }catch(Exception e){
+            System.out.println(e);  
+        }   
+    }//GEN-LAST:event_btncetaktiketActionPerformed
 
     private void jLabel67FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel67FocusGained
         // TODO add your handling code here:
@@ -886,7 +916,7 @@ public class Halbooking extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JLabel6;
     private javax.swing.JButton btnbatal;
-    private javax.swing.JButton btncetaktiket3;
+    private javax.swing.JButton btncetaktiket;
     private javax.swing.JButton btnedit;
     private javax.swing.JButton btnhapus;
     private javax.swing.JButton btnkeluar;
@@ -929,7 +959,7 @@ public class Halbooking extends javax.swing.JFrame {
     private javax.swing.JLabel labelmenu3;
     private javax.swing.JLabel labelsimpan3;
     private javax.swing.JLabel labeltambah3;
-    private javax.swing.JTable tabelbooking;
+    public javax.swing.JTable tabelbooking;
     private javax.swing.JTextField txtharga;
     private javax.swing.JTextField txtidbooking;
     private javax.swing.JTextField txtnama;
