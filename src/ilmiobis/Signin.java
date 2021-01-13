@@ -243,7 +243,7 @@ public class Signin extends javax.swing.JFrame {
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 90, -1));
 
         jLabel3.setBackground(new java.awt.Color(51, 37, 78));
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\NetBeansProjects\\Ilmiobis\\src\\images\\PBOOOO\\rightPanel.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/rightPanel.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 360, 450));
 
         jLabel17.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
@@ -251,7 +251,7 @@ public class Signin extends javax.swing.JFrame {
         jLabel17.setText("Sign In");
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 20, -1, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\NetBeansProjects\\Ilmiobis\\src\\images\\PBOOOO\\leftPanelBack.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/leftPanelBack.png"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
