@@ -68,7 +68,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Documents\PBO\Phone Icons - Free Download, PNG and SVG_files\phone(4).png"/>
+              <Image iconType="2" name="C:\Users\Afifah\Documents\NetBeansProjects\Ilmiobis\src\images\PBOOOO\phone(4).png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Phone"/>
           </Properties>
@@ -90,7 +90,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Documents\PBO\Twitter Icons - Free Download, PNG and SVG_files\twitter(4).png"/>
+              <Image iconType="2" name="C:\Users\Afifah\Documents\NetBeansProjects\Ilmiobis\src\images\PBOOOO\twitter(4).png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -100,11 +100,6 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Documents\PBO\iconbusmini.png"/>
-            </Property>
-          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="640" y="10" width="80" height="-1"/>
@@ -120,7 +115,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Documents\PBO\Email Icons - Free Download, PNG and SVG_files\email(3).png"/>
+              <Image iconType="2" name="C:\Users\Afifah\Documents\NetBeansProjects\Ilmiobis\src\images\PBOOOO\email(3).png"/>
             </Property>
           </Properties>
           <Events>
@@ -195,7 +190,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Documents\PBO\instagram-new--v2.png"/>
+              <Image iconType="2" name="C:\Users\Afifah\Documents\NetBeansProjects\Ilmiobis\src\images\PBOOOO\instagram-new--v2.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Instagram"/>
           </Properties>
@@ -231,9 +226,6 @@
         <Component class="javax.swing.JLabel" name="jLabel20">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Documents\PBO\User-Interface-Exit-icon.png"/>
-            </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -244,9 +236,6 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Documents\PBO\User-Interface-Exit-icon.png"/>
-            </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -328,9 +317,6 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="4e" green="25" red="33" type="rgb"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Documents\PBO\btnSignUpSwitch2.png"/>
-            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
@@ -407,9 +393,6 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="4e" green="25" red="33" type="rgb"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Documents\PBO\btnSignUpSwitch2.png"/>
-            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
@@ -426,9 +409,8 @@
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Pictures\leftPanelBack.png"/>
+              <Image iconType="3" name="/images/PBOOOO/bgungu.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="ddd"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

@@ -47,17 +47,20 @@ public class Signin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
         txtusername = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -80,10 +83,17 @@ public class Signin extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\iconbus.png")); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(51, 37, 78));
+        jLabel11.setText("Sign In");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 20, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\NetBeansProjects\\Ilmiobis\\src\\images\\PBOOOO\\iconbus.png")); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 250, 200));
 
-        jLabel14.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\User-Interface-Exit-icon.png")); // NOI18N
+        jLabel21.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/btnSignUpSwitch2.png"))); // NOI18N
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, -1, -1));
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, 30));
 
         jLabel5.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
@@ -111,10 +121,9 @@ public class Signin extends javax.swing.JFrame {
         jLabel7.setText("<html>\n<body>\n<u>Terms and Conditions</u>\n</body>\n</html>");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 270, 120, 20));
 
-        jLabel11.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(51, 37, 78));
-        jLabel11.setText("Sign In");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 20, -1, -1));
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/User-Interface-Exit-icon.png"))); // NOI18N
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 40, 30));
 
         jLabel12.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
         jLabel12.setText("Sign Up");
@@ -122,12 +131,10 @@ public class Signin extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Berlin Sans FB", 0, 13)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\btnSignUpSwitch.png")); // NOI18N
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 90, -1));
 
         jLabel9.setFont(new java.awt.Font("Berlin Sans FB", 0, 13)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\btnSignUpSwitch2.png")); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 90, -1));
 
         jLabel18.setFont(new java.awt.Font("Berlin Sans FB", 1, 12)); // NOI18N
@@ -135,6 +142,10 @@ public class Signin extends javax.swing.JFrame {
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setText("Sign In");
         jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 320, 90, 30));
+
+        jLabel20.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+        jLabel20.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\NetBeansProjects\\Ilmiobis\\src\\images\\PBOOOO\\btnSignUpSwitch.png")); // NOI18N
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, -1, -1));
 
         jCheckBox1.setBackground(new java.awt.Color(51, 37, 78));
         jCheckBox1.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
@@ -175,10 +186,10 @@ public class Signin extends javax.swing.JFrame {
         jLabel19.setForeground(new java.awt.Color(51, 37, 78));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("Exit");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 60, 30));
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 60, 30));
 
         btnexit.setBackground(new java.awt.Color(201, 232, 223));
-        btnexit.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\btnSignUpSwitch2.png")); // NOI18N
+        btnexit.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\NetBeansProjects\\Ilmiobis\\src\\images\\PBOOOO\\btnSignUpSwitch2.png")); // NOI18N
         btnexit.setBorder(null);
         btnexit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -199,7 +210,7 @@ public class Signin extends javax.swing.JFrame {
         jPanel1.add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 300, -1));
 
         btnsignup.setBackground(new java.awt.Color(51, 37, 78));
-        btnsignup.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\btnSignUpSwitch2.png")); // NOI18N
+        btnsignup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/btnSignUpSwitch2.png"))); // NOI18N
         btnsignup.setBorder(null);
         btnsignup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -217,7 +228,7 @@ public class Signin extends javax.swing.JFrame {
         btnsignin.setBackground(new java.awt.Color(51, 37, 78));
         btnsignin.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         btnsignin.setForeground(new java.awt.Color(51, 37, 78));
-        btnsignin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\btnSignUpSwitch2.png")); // NOI18N
+        btnsignin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/btnSignUpSwitch2.png"))); // NOI18N
         btnsignin.setBorder(null);
         btnsignin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -229,11 +240,10 @@ public class Signin extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Berlin Sans FB", 0, 13)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\btnSignUpSwitch.png")); // NOI18N
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 90, -1));
 
         jLabel3.setBackground(new java.awt.Color(51, 37, 78));
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\rightPanel.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\NetBeansProjects\\Ilmiobis\\src\\images\\PBOOOO\\rightPanel.png")); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 360, 450));
 
         jLabel17.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
@@ -241,8 +251,7 @@ public class Signin extends javax.swing.JFrame {
         jLabel17.setText("Sign In");
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 20, -1, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\leftPanelBack.png")); // NOI18N
-        jLabel4.setText("ddd");
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\NetBeansProjects\\Ilmiobis\\src\\images\\PBOOOO\\leftPanelBack.png")); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -370,6 +379,9 @@ public class Signin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

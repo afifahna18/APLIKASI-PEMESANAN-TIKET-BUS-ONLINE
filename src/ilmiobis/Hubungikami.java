@@ -81,7 +81,7 @@ public class Hubungikami extends javax.swing.JFrame {
 
         jLabel23.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel23.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\Phone Icons - Free Download, PNG and SVG_files\\phone(4).png")); // NOI18N
+        jLabel23.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\NetBeansProjects\\Ilmiobis\\src\\images\\PBOOOO\\phone(4).png")); // NOI18N
         jLabel23.setText("Phone");
         jLabel23.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -92,15 +92,13 @@ public class Hubungikami extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\Twitter Icons - Free Download, PNG and SVG_files\\twitter(4).png")); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\NetBeansProjects\\Ilmiobis\\src\\images\\PBOOOO\\twitter(4).png")); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 210, 160));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\iconbusmini.png")); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, 80, -1));
 
         jLabel22.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\Email Icons - Free Download, PNG and SVG_files\\email(3).png")); // NOI18N
+        jLabel22.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\NetBeansProjects\\Ilmiobis\\src\\images\\PBOOOO\\email(3).png")); // NOI18N
         jLabel22.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jLabel22FocusGained(evt);
@@ -135,7 +133,7 @@ public class Hubungikami extends javax.swing.JFrame {
 
         jLabel16.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\instagram-new--v2.png")); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\NetBeansProjects\\Ilmiobis\\src\\images\\PBOOOO\\instagram-new--v2.png")); // NOI18N
         jLabel16.setText("Instagram");
         jLabel16.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -156,11 +154,9 @@ public class Hubungikami extends javax.swing.JFrame {
         jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 230, 50));
 
         jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\User-Interface-Exit-icon.png")); // NOI18N
         jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 410, 40, 30));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\User-Interface-Exit-icon.png")); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 410, 40, 30));
 
         jLabel5.setFont(new java.awt.Font("Berlin Sans FB", 0, 24)); // NOI18N
@@ -191,7 +187,6 @@ public class Hubungikami extends javax.swing.JFrame {
         jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 410, 60, 30));
 
         btnexit.setBackground(new java.awt.Color(51, 37, 78));
-        btnexit.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\btnSignUpSwitch2.png")); // NOI18N
         btnexit.setBorder(null);
         btnexit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -222,7 +217,6 @@ public class Hubungikami extends javax.swing.JFrame {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 160, -1));
 
         btnmenu.setBackground(new java.awt.Color(51, 37, 78));
-        btnmenu.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\btnSignUpSwitch2.png")); // NOI18N
         btnmenu.setBorder(null);
         btnmenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,8 +225,7 @@ public class Hubungikami extends javax.swing.JFrame {
         });
         jPanel1.add(btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 410, 90, 30));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Pictures\\leftPanelBack.png")); // NOI18N
-        jLabel4.setText("ddd");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/bgungu.png"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

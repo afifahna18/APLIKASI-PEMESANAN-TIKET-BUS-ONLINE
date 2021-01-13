@@ -117,7 +117,6 @@ public class Haldatabus extends javax.swing.JFrame {
         btnbatal = new javax.swing.JButton();
         labelhapus = new javax.swing.JLabel();
         btnhapus = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel17 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -150,7 +149,7 @@ public class Haldatabus extends javax.swing.JFrame {
         jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 340, 50));
 
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\User-Interface-Exit-icon.png")); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/User-Interface-Exit-icon.png"))); // NOI18N
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 40, 30));
 
         labelmenu.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
@@ -164,7 +163,7 @@ public class Haldatabus extends javax.swing.JFrame {
         btnmenu.setBackground(new java.awt.Color(51, 37, 78));
         btnmenu.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         btnmenu.setForeground(new java.awt.Color(51, 37, 78));
-        btnmenu.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\btnSignUpSwitch2.png")); // NOI18N
+        btnmenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/btnSignUpSwitch2.png"))); // NOI18N
         btnmenu.setBorder(null);
         btnmenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -174,26 +173,24 @@ public class Haldatabus extends javax.swing.JFrame {
         jPanel1.add(btnmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 30));
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\icontrash.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/icontrash.png"))); // NOI18N
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 370, 30, 30));
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\Pencil-icon.png")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/Pencil-icon.png"))); // NOI18N
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 370, 40, 30));
 
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\User-Interface-Exit-icon.png")); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/User-Interface-Exit-icon.png"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 370, 40, 30));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\closeicon.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/closeicon.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 370, 30, 30));
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\save-icon.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/save-icon.png"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 370, 40, 30));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\iconbusmini.png")); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, 80, -1));
 
         jLabel16.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
@@ -313,7 +310,7 @@ public class Haldatabus extends javax.swing.JFrame {
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 60, -1, 20));
 
         btnbatal.setBackground(new java.awt.Color(51, 37, 78));
-        btnbatal.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\btnSignUpSwitch2.png")); // NOI18N
+        btnbatal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/btnSignUpSwitch2.png"))); // NOI18N
         btnbatal.setBorder(null);
         btnbatal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -338,7 +335,7 @@ public class Haldatabus extends javax.swing.JFrame {
         btnhapus.setBackground(new java.awt.Color(51, 37, 78));
         btnhapus.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         btnhapus.setForeground(new java.awt.Color(51, 37, 78));
-        btnhapus.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\btnSignUpSwitch2.png")); // NOI18N
+        btnhapus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/btnSignUpSwitch2.png"))); // NOI18N
         btnhapus.setBorder(null);
         btnhapus.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -351,12 +348,12 @@ public class Haldatabus extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnhapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 370, 90, 30));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, -1, -1));
         jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 190, 10));
 
         jLabel17.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(51, 37, 78));
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 20, -1, -1));
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/iconbusmini.png"))); // NOI18N
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
@@ -420,7 +417,7 @@ public class Haldatabus extends javax.swing.JFrame {
         btnkeluar.setBackground(new java.awt.Color(51, 37, 78));
         btnkeluar.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         btnkeluar.setForeground(new java.awt.Color(51, 37, 78));
-        btnkeluar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\btnSignUpSwitch2.png")); // NOI18N
+        btnkeluar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/btnSignUpSwitch2.png"))); // NOI18N
         btnkeluar.setBorder(null);
         btnkeluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -432,7 +429,7 @@ public class Haldatabus extends javax.swing.JFrame {
         btnedit.setBackground(new java.awt.Color(51, 37, 78));
         btnedit.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         btnedit.setForeground(new java.awt.Color(51, 37, 78));
-        btnedit.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\btnSignUpSwitch2.png")); // NOI18N
+        btnedit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/btnSignUpSwitch2.png"))); // NOI18N
         btnedit.setBorder(null);
         btnedit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -444,7 +441,7 @@ public class Haldatabus extends javax.swing.JFrame {
         btnsimpan.setBackground(new java.awt.Color(51, 37, 78));
         btnsimpan.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         btnsimpan.setForeground(new java.awt.Color(51, 37, 78));
-        btnsimpan.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\btnSignUpSwitch2.png")); // NOI18N
+        btnsimpan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/btnSignUpSwitch2.png"))); // NOI18N
         btnsimpan.setBorder(null);
         btnsimpan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -478,8 +475,7 @@ public class Haldatabus extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 480, 250));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Pictures\\leftPanelBack.png")); // NOI18N
-        jLabel4.setText("ddd");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/bgungu.png"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -750,7 +746,6 @@ public class Haldatabus extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;

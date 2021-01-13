@@ -37,11 +37,7 @@ public class Haldepan extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel17 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         loadingpercent = new javax.swing.JLabel();
         barloading = new javax.swing.JProgressBar();
@@ -52,13 +48,8 @@ public class Haldepan extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Documents\\PBO\\iconbus.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/iconbus.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 290, 200));
-
-        jLabel2.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 37, 78));
-        jLabel2.setText("Come and Go With Us");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 240, 20));
 
         jLabel6.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -69,17 +60,6 @@ public class Haldepan extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, -1, 20));
-
-        jLabel11.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(51, 37, 78));
-        jLabel11.setText("Sign In");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 20, -1, -1));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, -1, -1));
-
-        jLabel17.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(51, 37, 78));
-        jLabel17.setText("Sign In");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 20, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Berlin Sans FB", 0, 48)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
@@ -98,8 +78,7 @@ public class Haldepan extends javax.swing.JFrame {
         jPanel1.add(loadingpercent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 740, -1));
         jPanel1.add(barloading, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 740, 20));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Afifah\\Pictures\\leftPanelBack.png")); // NOI18N
-        jLabel4.setText("ddd");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/PBOOOO/bgungu.png"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -180,14 +159,10 @@ public class Haldepan extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JProgressBar barloading;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel loadingpercent;
     // End of variables declaration//GEN-END:variables
 }

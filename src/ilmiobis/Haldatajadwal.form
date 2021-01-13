@@ -63,7 +63,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Documents\PBO\User-Interface-Exit-icon.png"/>
+              <Image iconType="3" name="/images/PBOOOO/User-Interface-Exit-icon.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -103,7 +103,7 @@
               <Color blue="4e" green="25" red="33" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Documents\PBO\btnSignUpSwitch2.png"/>
+              <Image iconType="3" name="/images/PBOOOO/btnSignUpSwitch2.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -122,7 +122,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Documents\PBO\icontrash.png"/>
+              <Image iconType="3" name="/images/PBOOOO/icontrash.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -135,7 +135,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Documents\PBO\Pencil-icon.png"/>
+              <Image iconType="3" name="/images/PBOOOO/Pencil-icon.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -148,7 +148,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Documents\PBO\User-Interface-Exit-icon.png"/>
+              <Image iconType="3" name="/images/PBOOOO/User-Interface-Exit-icon.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -161,7 +161,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Documents\PBO\closeicon.png"/>
+              <Image iconType="3" name="/images/PBOOOO/closeicon.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -174,7 +174,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Documents\PBO\save-icon.png"/>
+              <Image iconType="3" name="/images/PBOOOO/save-icon.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -186,7 +186,7 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Documents\PBO\iconbusmini.png"/>
+              <Image iconType="3" name="/images/PBOOOO/iconbusmini.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -348,7 +348,7 @@
               <Color blue="4e" green="25" red="33" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Documents\PBO\btnSignUpSwitch2.png"/>
+              <Image iconType="3" name="/images/PBOOOO/btnSignUpSwitch2.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -395,7 +395,7 @@
               <Color blue="4e" green="25" red="33" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Documents\PBO\btnSignUpSwitch2.png"/>
+              <Image iconType="3" name="/images/PBOOOO/btnSignUpSwitch2.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -623,7 +623,7 @@
               <Color blue="4e" green="25" red="33" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Documents\PBO\btnSignUpSwitch2.png"/>
+              <Image iconType="3" name="/images/PBOOOO/btnSignUpSwitch2.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -650,7 +650,7 @@
               <Color blue="4e" green="25" red="33" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Documents\PBO\btnSignUpSwitch2.png"/>
+              <Image iconType="3" name="/images/PBOOOO/btnSignUpSwitch2.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -677,7 +677,7 @@
               <Color blue="4e" green="25" red="33" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Documents\PBO\btnSignUpSwitch2.png"/>
+              <Image iconType="3" name="/images/PBOOOO/btnSignUpSwitch2.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -735,9 +735,8 @@
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Afifah\Pictures\leftPanelBack.png"/>
+              <Image iconType="3" name="/images/PBOOOO/bgungu.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="ddd"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
